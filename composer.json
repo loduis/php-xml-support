@@ -1,0 +1,19 @@
+{
+    "name": "loduis/php-xml-support",
+    "authors": [
+        {
+            "name": "Loduis Madariaga",
+            "email": "loduis@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "XML\\Support": "src/"
+        }
+    },
+    "require": {
+        "illuminate/support": "^5.5",
+        "loduis/php-xml-contracts": "dev-master"
+    },
+    "minimum-stability": "dev"
+}
