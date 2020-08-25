@@ -15,5 +15,6 @@
         "illuminate/support": "^7.2",
         "loduis/xml-contracts": "dev-master"
     },
+    "license": "MIT",
     "minimum-stability": "dev"
 }
