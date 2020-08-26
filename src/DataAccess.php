@@ -33,7 +33,7 @@ abstract class DataAccess implements ArrayAccess, IteratorAggregate, Arrayable, 
     {
         $values = [];
         if ($this->prepareFillableTypes()) {
-            foreach (array_flip($this->fillable) as $key) {
+            foreach ($this->fillable as $key => $type) { // not usign array_flip for keep order
                 if (Arr::has($data, $key)) {
                     $values[$key] = Arr::pull($data, $key);
                 } elseif (($snake = Str::snake($key)) != $key) {
