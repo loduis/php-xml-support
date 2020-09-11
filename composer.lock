@@ -103,12 +103,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/collections.git",
-                "reference": "446310d53bf58905bf2fb0152d9df9a169fc3aa9"
+                "reference": "22e701e35a70456f3d1c986060486c11b51fc3d4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/collections/zipball/446310d53bf58905bf2fb0152d9df9a169fc3aa9",
-                "reference": "446310d53bf58905bf2fb0152d9df9a169fc3aa9",
+                "url": "https://api.github.com/repos/illuminate/collections/zipball/22e701e35a70456f3d1c986060486c11b51fc3d4",
+                "reference": "22e701e35a70456f3d1c986060486c11b51fc3d4",
                 "shasum": ""
             },
             "require": {
@@ -142,7 +142,7 @@
             ],
             "description": "The Illuminate Collections package.",
             "homepage": "https://laravel.com",
-            "time": "2020-09-08T12:37:36+00:00"
+            "time": "2020-09-10T19:50:27+00:00"
         },
         {
             "name": "illuminate/contracts",
@@ -328,12 +328,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "76e093824c1d2f245dbaeae64b52bbea94efa4b2"
+                "reference": "e0c86a5f0427e27ab18e85b69d68e6216a80a652"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/76e093824c1d2f245dbaeae64b52bbea94efa4b2",
-                "reference": "76e093824c1d2f245dbaeae64b52bbea94efa4b2",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/e0c86a5f0427e27ab18e85b69d68e6216a80a652",
+                "reference": "e0c86a5f0427e27ab18e85b69d68e6216a80a652",
                 "shasum": ""
             },
             "require": {
@@ -409,7 +409,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-09-08T15:54:39+00:00"
+            "time": "2020-09-10T17:21:07+00:00"
         },
         {
             "name": "psr/container",
