@@ -13,7 +13,7 @@
     },
     "require": {
         "illuminate/support": "^8.0",
-        "loduis/xml-contracts": "dev-master"
+        "loduis/xml-contracts": "master"
     },
     "license": "MIT",
     "minimum-stability": "dev"
