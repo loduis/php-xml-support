@@ -1,5 +1,6 @@
 {
     "name": "loduis/xml-support",
+    "description": "Quick library for access data estructure for xml",
     "authors": [
         {
             "name": "Loduis Madariaga",

@@ -6,7 +6,7 @@ trait SingleValue
 {
     public function __construct($value = [], array $attributes = [])
     {
-        if (is_scalar($value)) {
+        if ($value === null || is_scalar($value)) {
             $value = ['value' => $value];
         }
         if ($attributes) {
