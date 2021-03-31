@@ -6,6 +6,8 @@ use Illuminate\Support\Str;
 
 trait AttributeAccess
 {
+    protected $camelAttributes = true;
+
     protected $attributes = [];
 
     /**
@@ -16,7 +18,7 @@ trait AttributeAccess
      */
     public function offsetExists($key)
     {
-        $key = Str::camel($key);
+        $key = $this->getKey($key);
 
         return array_key_exists($key, $this->attributes);
     }
@@ -29,7 +31,7 @@ trait AttributeAccess
      */
     public function offsetGet($key)
     {
-        $key = Str::camel($key);
+        $key = $this->getKey($key);
 
         return $this->attributes[$key];
     }
@@ -43,7 +45,7 @@ trait AttributeAccess
      */
     public function offsetSet($key, $value)
     {
-        $key = Str::camel($key);
+        $key = $this->getKey($key);
 
         $this->attributes[$key] = $value;
     }
@@ -56,7 +58,7 @@ trait AttributeAccess
      */
     public function offsetUnset($key)
     {
-        $key = Str::camel($key);
+        $key = $this->getKey($key);
 
         unset($this->attributes[$key]);
     }
@@ -78,9 +80,15 @@ trait AttributeAccess
 
     public function setAttribute($key, $value)
     {
-        $key = Str::camel($key);
+        $key = $this->getKey($key);
+
         $this[$key] = $value;
 
         return $this;
+    }
+
+    protected function getKey($key)
+    {
+        return static::$camelAttributes ? Str::camel($key) : $key;
     }
 }
