@@ -89,6 +89,6 @@ trait AttributeAccess
 
     protected function getKey($key)
     {
-        return static::$camelAttributes ? Str::camel($key) : $key;
+        return $this->camelAttributes ? Str::camel($key) : $key;
     }
 }
