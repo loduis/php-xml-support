@@ -3,7 +3,7 @@
 namespace XML\Support;
 
 use ReflectionClass;
-use ReflectionMethod;
+use ReflectionNamedType;
 use UnexpectedValueException;
 
 trait PropertyAccessor
@@ -119,9 +119,12 @@ trait PropertyAccessor
     private function reflectionParameter($reflection)
     {
         $parameters = $reflection->getParameters();
-        $parameterClass = $parameters[0]->getClass();
-        if ($parameterClass && $parameterClass->isSubclassOf(self::class)) {
-            return $parameterClass;
+        $parameterType = $parameters[0]->getType();
+        if ($parameterType &&
+            ($parameterType instanceof ReflectionNamedType) && !$parameterType->isBuiltin()
+        ) {
+            return $this->reflectionClass((string) $parameterType)
+                ->isSubclassOf(self::class);
         }
     }
 

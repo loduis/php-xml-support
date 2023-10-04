@@ -11,6 +11,7 @@ use Illuminate\Support\{
     Arr
 };
 use Illuminate\Contracts\Support\Arrayable;
+use Traversable;
 
 abstract class DataAccess implements ArrayAccess, IteratorAggregate, Arrayable, Countable
 {
@@ -97,12 +98,12 @@ abstract class DataAccess implements ArrayAccess, IteratorAggregate, Arrayable, 
         unset($this->data[$key]);
     }
 
-    public function getIterator()
+    public function getIterator(): Traversable
     {
         return new ArrayIterator($this->toArray());
     }
 
-    public function __debugInfo()
+    public function __debugInfo(): array
     {
         return [
             '@attributes' => $this->attributes(),
@@ -110,7 +111,7 @@ abstract class DataAccess implements ArrayAccess, IteratorAggregate, Arrayable, 
         ];
     }
 
-    public function count()
+    public function count(): int
     {
         return count($this->data);
     }
