@@ -13,9 +13,15 @@
         }
     },
     "require": {
-        "illuminate/support": "^8.8",
-        "loduis/xml-contracts": "master"
+        "loduis/xml-contracts": "master",
+        "loduis/support": "^1.0"
     },
     "license": "MIT",
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/loduis/php-support.git"
+        }
+    ]
 }

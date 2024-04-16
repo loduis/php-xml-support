@@ -6,11 +6,13 @@ use Countable;
 use ArrayAccess;
 use ArrayIterator;
 use IteratorAggregate;
-use Illuminate\Support\{
-    Str,
-    Arr
+use function Php\{
+    str_camel,
+    str_snake,
+    array_pull,
+    array_has
 };
-use Illuminate\Contracts\Support\Arrayable;
+use Php\Arrayable;
 use Traversable;
 
 abstract class DataAccess implements ArrayAccess, IteratorAggregate, Arrayable, Countable
@@ -18,7 +20,7 @@ abstract class DataAccess implements ArrayAccess, IteratorAggregate, Arrayable, 
     use AttributeAccess;
     use PropertyAccessor;
 
-    protected $data = [];
+    protected array $data = [];
 
     public function __construct($data = [])
     {
@@ -32,10 +34,10 @@ abstract class DataAccess implements ArrayAccess, IteratorAggregate, Arrayable, 
         $values = [];
         if ($this->prepareFillableTypes()) {
             foreach ($this->fillable as $key => $type) { // not usign array_flip for keep order
-                if (Arr::has($data, $key)) {
-                    $values[$key] = Arr::pull($data, $key);
-                } elseif (($snake = Str::snake($key)) != $key) {
-                    $values[$key] = Arr::pull($data, $snake);
+                if (array_has($data, $key)) {
+                    $values[$key] = array_pull($data, $key);
+                } elseif (($snake = str_snake($key)) != $key) {
+                    $values[$key] = array_pull($data, $snake);
                 }
             }
         }
@@ -53,7 +55,7 @@ abstract class DataAccess implements ArrayAccess, IteratorAggregate, Arrayable, 
      */
     public function __isset($key)
     {
-        $key = Str::camel($key);
+        $key = str_camel($key);
 
         return array_key_exists($key, $this->data);
 
@@ -67,7 +69,7 @@ abstract class DataAccess implements ArrayAccess, IteratorAggregate, Arrayable, 
      */
     public function __get($key)
     {
-        $key = Str::camel($key);
+        $key = str_camel($key);
 
         return $this->propertyGetterAccessor($key);
     }
@@ -81,7 +83,7 @@ abstract class DataAccess implements ArrayAccess, IteratorAggregate, Arrayable, 
      */
     public function __set($key, $value)
     {
-        $key = Str::camel($key);
+        $key = str_camel($key);
 
         $this->propertySetterAccessor($key, $value);
     }
@@ -93,7 +95,7 @@ abstract class DataAccess implements ArrayAccess, IteratorAggregate, Arrayable, 
      */
     public function __unset($key)
     {
-        $key = Str::camel($key);
+        $key = str_camel($key);
 
         unset($this->data[$key]);
     }

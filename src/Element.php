@@ -9,7 +9,7 @@ class Element extends DataAccess
         return new static($data);
     }
 
-    public function toArray()
+    public function toArray(): array
     {
         return $this->data;
     }

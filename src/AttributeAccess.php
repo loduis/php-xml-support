@@ -2,7 +2,7 @@
 
 namespace XML\Support;
 
-use Illuminate\Support\Str;
+use function Php\str_camel;
 
 trait AttributeAccess
 {
@@ -89,6 +89,6 @@ trait AttributeAccess
 
     protected function resolveAttrKey($key)
     {
-        return static::$camelAttributes ? Str::camel($key) : $key;
+        return static::$camelAttributes ? str_camel($key) : $key;
     }
 }

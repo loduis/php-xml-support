@@ -16,7 +16,7 @@ trait SingleValue
         parent::__construct($value);
     }
 
-    public function toArray()
+    public function toArray(): array
     {
         return [
             $this->value
