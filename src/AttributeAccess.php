@@ -71,6 +71,8 @@ trait AttributeAccess
         foreach ($values as $key => $value) {
             $this[$key] = $value;
         }
+
+        return $this;
     }
 
     public function hasAttribute($key)
