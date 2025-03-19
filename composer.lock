@@ -4,36 +4,48 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f78d03e25f98a6d490ad94404793d2af",
+    "content-hash": "e9f89e54899610e3ae7204ae91f1aba2",
     "packages": [
         {
-            "name": "loduis/support",
+            "name": "loduis/php-support",
             "version": "dev-main",
             "source": {
                 "type": "git",
                 "url": "https://github.com/loduis/php-support.git",
-                "reference": "0c7a57b63f49b40574fba934612f135506a0aa2c"
+                "reference": "bacd92f8836e8379b0e3010c1380bd1d52dd94fe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/loduis/php-support/zipball/0c7a57b63f49b40574fba934612f135506a0aa2c",
-                "reference": "0c7a57b63f49b40574fba934612f135506a0aa2c",
+                "url": "https://api.github.com/repos/loduis/php-support/zipball/bacd92f8836e8379b0e3010c1380bd1d52dd94fe",
+                "reference": "bacd92f8836e8379b0e3010c1380bd1d52dd94fe",
                 "shasum": ""
+            },
+            "require": {
+                "php": "^8.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^9",
+                "vimeo/psalm": "^5.2"
             },
             "default-branch": true,
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "1.x-dev"
+                    "dev-main": "3.x-dev"
                 }
             },
             "autoload": {
                 "psr-4": {
-                    "Php\\": "src/"
+                    "PHP\\": "src/"
                 },
                 "files": [
                     "src/helpers.php"
                 ]
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "PHP\\": "tests/"
+                }
             },
             "license": [
                 "MIT"
@@ -48,7 +60,7 @@
                 "source": "https://github.com/loduis/php-support/tree/main",
                 "issues": "https://github.com/loduis/php-support/issues"
             },
-            "time": "2024-04-16T12:31:23+00:00"
+            "time": "2024-10-27T01:08:44+00:00"
         },
         {
             "name": "loduis/xml-contracts",

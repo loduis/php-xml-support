@@ -6,13 +6,13 @@ use Countable;
 use ArrayAccess;
 use ArrayIterator;
 use IteratorAggregate;
-use function Php\{
+use function PHP\{
     str_camel,
     str_snake,
     array_pull,
     array_has
 };
-use Php\Arrayable;
+use PHP\Arrayable;
 use Traversable;
 
 abstract class DataAccess implements ArrayAccess, IteratorAggregate, Arrayable, Countable
